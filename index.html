@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=640, maximum-scale=1.0, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Plain.Network</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -24,39 +24,93 @@
     <meta name="theme-color" content="#ffffff">
     <style>
         body {
+            background: #fdfdfd;
             font-family: Arial, Helvetica, sans-serif;
             color: rgb(120, 120, 120);
             padding: 4rem;
+            margin-bottom: calc(8rem * 0.4125 + 2rem);
         }
         h1, h2, h3 {
             font-weight: normal;
         }
+        h1, h2 {
+            margin-top: 1rem;
+        }
+        p {
+            line-height: 1.5;
+        }
         ul {
             font-size: 1.2rem;
+            margin-top: 1rem;
         }
         li {
             line-height: 1.5;
         }
+        .right-text {
+            text-align: right;
+        }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         .logo-box {
             text-align: center;
             position: fixed;
-            bottom: 4rem;
+            bottom: 1rem;
             left: 0;
             right: 0;
             margin: auto;
             background-image: url(logo.svg);
-            width: 16rem;
-            height: calc(16rem * 0.4125);
+            width: 8rem;
+            height: calc(8rem * 0.4125);
+        }
+        .footer {
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            height: calc(8rem * 0.4125 + 1rem);
+            border-top: 1px solid rgba(244, 244, 244, 1);
         }
     </style>
 </head>
 <body>
     <h1>Expand your Business with Blockchain technology.</h1>
-    <h3>Designed to ensure the user understands as quickly, easily, and completely as possible</h3>
+    <p>
+        Designed to ensure the user understands as quickly, easily, and completely as possible.<br/>
+        Blockchain technology already useful, But it wasn't silver bullet. So we provide our know-how and our technology for Your Business.
+    </p>
+    <br/>
+    <h1>Use already Exists</h1>
     <ul>
-        <li>Expand your business.</li>
-        <li>...</li>
+        <li>bitcoin</li>
+        <li>ethereum</li>
+        <li>eos</li>
+        <li>steem</li>
+        <li>and others</li>
     </ul>
+    <br/>
+    <h1>On-going projects</h1>
+    <ul>
+        <li>p2p funding</li>
+        <li>membership</li>
+        <li>webtoon(comics) globalization</li>
+        <li>art auction</li>
+    </ul>
+    <br/>
+    <p class="right-text">
+        from <a href="mailto:Plain.Network<contact@plain.network>"><i>contact@plain.network</i></a>
+    </p>
+    <div class="footer">
+        
+    </div>
     <div class="logo-box"></div>
 </body>
 </html>
