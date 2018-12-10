@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=640, maximum-scale=1.0, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Plain.Network</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -25,7 +26,7 @@
     <style>
         body {
             background: #fdfdfd;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Nanum Myeongjo', Arial, Helvetica, sans-serif;
             color: rgb(120, 120, 120);
             padding: 4rem;
             margin-bottom: calc(8rem * 0.4125 + 2rem);
@@ -96,35 +97,65 @@
             height: calc(8rem * 0.4125 + 1rem);
             border-top: 1px solid rgba(244, 244, 244, 1);
         }
+        section {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1>Expand your Business with Blockchain technology.</h1>
-    <p>
-        Designed to ensure the user understands as quickly, easily, and completely as possible.<br/>
-        Blockchain technology already useful, But it wasn't silver bullet. So we provide our know-how and our technology for Your Business.
-    </p>
-    <br/>
-    <h1>What We Already Have.</h1>
-    <ul>
-        <li>bitcoin</li>
-        <li>ethereum</li>
-        <li>eos</li>
-        <li>steem</li>
-        <li>and others</li>
-    </ul>
-    <br/>
-    <h1>What You Are Already Doing.</h1>
-    <ul>
-        <li>peer-to-peer tokenized finanace</li>
-        <li>managed membership</li>
-        <li>webtoon(comics) globalization</li>
-        <li>guaranteed art auction</li>
-        <li class="your-wirte">and your <input name="business" type="text" placeholder="" maxlength="20"></li>
-    </ul>
+    <section lang="en">
+        <h1>Expand your Business with Blockchain technology.</h1>
+        <p>
+            Designed to ensure the user understands as quickly, easily, and completely as possible.<br/>
+            Blockchain technology already useful, But it wasn't silver bullet. So we provide our know-how and our technology for Your Business.
+        </p>
+        <br/>
+        <h1>What We Already Have.</h1>
+        <ul>
+            <li>bitcoin</li>
+            <li>ethereum</li>
+            <li>eos</li>
+            <li>steem</li>
+            <li>and others</li>
+        </ul>
+        <br/>
+        <h1>What You Are Already Doing.</h1>
+        <ul>
+            <li>peer-to-peer finanace</li>
+            <li>managed membership</li>
+            <li>webtoon(comics) globalization</li>
+            <li>art auction</li>
+            <li class="your-wirte">and your <input name="business" type="text" placeholder="" maxlength="20"></li>
+        </ul>
+    </section>
+    <section lang="ko">
+        <h1>블록체인 기술로 당신의 비즈니스를 확장하세요.</h1>
+        <p>
+            사용자가 가능한 한 빠르고 쉽고 완벽하게 이해할 수 있도록 설계되었습니다.<br />
+            블록체인 기술은 이미 쓸만하지만 만능은 아닙니다. 따라서 우리는 귀하의 비즈니스에 적합한 우리의 노하우와 기술을 제공합니다.
+        </p>
+        <br />
+        <h1>이미 우리에게 이미 있는 것</h1>
+        <ul>
+            <li>Bitcoin(비트코인)</li>
+            <li>Ethereum(이더리움)</li>
+            <li>EOS(이오스)</li>
+            <li>STEEM(스팀)</li>
+            <li>그리고 다른 기술들</li>
+        </ul>
+        <br />
+        <h1>당신이 이미 하고 있는 것</h1>
+        <ul>
+            <li>개인간 금융거래</li>
+            <li>고객 관리</li>
+            <li>웹툰 글로벌화</li>
+            <li>미술품 경매</li>
+            <li class="your-wirte">그리고 당신의 <input name="business" type="text" placeholder="" maxlength="20"></li>
+        </ul>
+    </section>
     <br/>
     <p class="right-text">
-        from <a href="mailto:Plain.Network<contact@plain.network>"><i>contact@plain.network</i></a>
+        <a href="mailto:Plain.Network<contact@plain.network>"><i>contact@plain.network</i></a>
     </p>
     <div class="footer">
         
@@ -136,18 +167,20 @@
         crossorigin="anonymous"></script>
     <script>
         $(function() {
+            var langcode = 'en';
+            if (navigator.language.match(/ko/)) {
+                langcode = 'ko'
+            }
+
+            $('section[lang='+ langcode +']').show();
             $('input[name=business]').on('keydown', function() {
                 var keycode = event.keyCode || event.which;
-                var subject = $('input[name=business]').val();
-                var lang = null
                 var langpack = {
-                    'ko':{'subject':'(문의)', 'body':'문의 내용을 작성해주시면 답변드리겠습니다.\n ----------------------------------------'},
+                    'ko': { 'subject': '(문의)', 'body': '문의 내용을 작성해주시면 답변드리겠습니다.\n ----------------------------------------' },
                     'en': { 'subject': '(Inquiry)', 'body': 'Please fill out the inquiry and we will reply.\n ----------------------------------------' }
                 }
-                if (navigator.language.match(/ko/)) {
-                    lang = langpack.ko
-                } 
-                lang = lang || langpack.en
+                var lang = langpack[langcode];
+                var subject = $(this).val();
                 if (keycode == '13') {
                     location.href='mailto:Plain.Network<contact@plain.network?body='+encodeURI(lang.body)+'&subject='+encodeURI(lang.subject +' '+ subject +'.');
                 }
