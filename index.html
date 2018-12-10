@@ -120,7 +120,7 @@
         <li>managed membership</li>
         <li>webtoon(comics) globalization</li>
         <li>guaranteed art auction</li>
-        <li class="your-wirte">and your <input type="text" placeholder="" maxlength="20"></li>
+        <li class="your-wirte">and your <input name="business" type="text" placeholder="" maxlength="20"></li>
     </ul>
     <br/>
     <p class="right-text">
@@ -130,5 +130,29 @@
         
     </div>
     <div class="logo-box"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('input[name=business]').on('keydown', function() {
+                var keycode = event.keyCode || event.which;
+                var subject = $('input[name=business]').val();
+                var lang = null
+                var langpack = {
+                    'ko':{'subject':'(문의)', 'body':'문의 내용을 작성해주시면 답변드리겠습니다.\n ----------------------------------------'},
+                    'en': { 'subject': '(Inquiry)', 'body': 'Please fill out the inquiry and we will reply.\n ----------------------------------------' }
+                }
+                if (navigator.language.match(/ko/)) {
+                    lang = langpack.ko
+                } 
+                lang = lang || langpack.en
+                if (keycode == '13') {
+                    location.href='mailto:Plain.Network<contact@plain.network?body='+encodeURI(lang.body)+'&subject='+encodeURI(lang.subject +' '+ subject +'.');
+                }
+            })
+        });
+    </script>
 </body>
 </html>
