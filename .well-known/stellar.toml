@@ -1,0 +1,24 @@
+# ----- PlainNetwork's Public Stellar Anchor <plain.network> -----
+
+ACCOUNTS=[
+"GB342SLAOH2V4TSHB5I3VF7KEFOFYKRRLOUZYKEC6LE5B6RC2GCHRUD2"]
+
+[DOCUMENTATION]
+ORG_NAME="Plain Network Inc"
+ORG_DBA="Plain Network"
+ORG_URL="https://plain.network"
+ORG_LOGO="https://plain.network/favicon-96x96.png"
+ORG_OFFICIAL_EMAIL="contact@plain.network"
+ORG_PHYSICAL_ADDRESS="606, Seobusaet-gil, Geumcheon-gu, Seoul, Republic of Korea"
+
+[[CURRENCIES]]
+code="KRWC"
+issuer="GB342SLAOH2V4TSHB5I3VF7KEFOFYKRRLOUZYKEC6LE5B6RC2GCHRUD2"
+display_decimals=0
+name="Claimable KRW"
+status="live"
+is_unlimited="True"
+image="https://plain.network/.well-known/krw.png"
+anchor_asset_type="fiat"
+anchor_asset="KRW"
+redemption_instructions="Register on plain.network and submit the required KYC information. We will contact you after."
